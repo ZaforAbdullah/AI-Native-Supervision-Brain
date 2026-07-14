@@ -1,6 +1,6 @@
 # Supervision Brain
 
-**Live demo:** [TODO — add Vercel deployment URL](https://your-app.vercel.app)
+**[Live Demo](https://supervision-brain.vercel.app)**
 
 A network risk analysis platform for advisor supervision teams. It watches five data feeds per advisor (mortgage lender spread, protection provider spread, file review results, file review deficiencies, enhanced financial monitoring flags), scores risk against a configurable rule engine, and layers AI on top for narrative explanation, deep-dive review, anomaly surfacing, natural-language rule authoring, and a chat assistant over the data.
 
@@ -153,7 +153,7 @@ The AI provider is selected by the `AI_PROVIDER` environment variable — everyt
 | `AI_PROVIDER` | When to use        | Additional vars needed |
 |----------------|---------------------|--------------------------|
 | `lm_studio`    | Local development    | `LM_STUDIO_BASE_URL` (default `http://localhost:1234/v1`), `LM_STUDIO_MODEL` |
-| `gemini`       | Cloud / production    | `GEMINI_API_KEY`, `GEMINI_MODEL` (default `gemini-2.0-flash`) |
+| `gemini`       | Cloud / production    | `GEMINI_API_KEY`, `GEMINI_MODEL` (default `gemini-3.1-flash-lite`) |
 | *(blank)*      | Rule-based only        | none |
 
 LM Studio exposes an OpenAI-compatible REST API — load any compatible model and point the env vars at it.
@@ -167,7 +167,7 @@ LM Studio exposes an OpenAI-compatible REST API — load any compatible model an
 | `LM_STUDIO_BASE_URL`    | LM Studio server URL                    | `http://localhost:1234/v1` |
 | `LM_STUDIO_MODEL`       | Model name as listed in LM Studio       | `local-model` |
 | `GEMINI_API_KEY`        | Google Gemini API key                    | required if `AI_PROVIDER=gemini` |
-| `GEMINI_MODEL`          | Gemini model name                        | `gemini-2.0-flash` |
+| `GEMINI_MODEL`          | Gemini model name                        | `gemini-3.1-flash-lite` |
 | `AI_RATE_LIMIT_PER_MINUTE` | Self-throttle for Gemini calls (keeps under free-tier quota); no effect on LM Studio | `10` |
 | `AI_REQUEST_TIMEOUT_SECONDS` | Per-request timeout, both providers | `60` |
 | `SMTP_*`                | Email alert configuration                | optional |

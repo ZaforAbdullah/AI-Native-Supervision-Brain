@@ -19,7 +19,7 @@ class Settings(BaseSettings):
 
     # Google Gemini (production)
     GEMINI_API_KEY: str = ""
-    GEMINI_MODEL: str = "gemini-2.0-flash"
+    GEMINI_MODEL: str = "gemini-3.1-flash-lite"
 
     AI_RATE_LIMIT_PER_MINUTE: int = 10  # Gemini only — keeps under free-tier quota
     AI_REQUEST_TIMEOUT_SECONDS: int = 60

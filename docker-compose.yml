@@ -9,7 +9,7 @@ services:
       - SECRET_KEY=${SECRET_KEY:-dev-secret-key-change-in-production}
       - AI_PROVIDER=${AI_PROVIDER:-}
       - GEMINI_API_KEY=${GEMINI_API_KEY:-}
-      - GEMINI_MODEL=${GEMINI_MODEL:-gemini-2.0-flash}
+      - GEMINI_MODEL=${GEMINI_MODEL:-gemini-3.1-flash-lite}
       - CORS_ORIGINS=http://localhost:3000
       - DATABASE_URL=${DATABASE_URL:-postgresql://postgres:postgres@host.docker.internal:54322/postgres}
       - SMTP_HOST=${SMTP_HOST:-}

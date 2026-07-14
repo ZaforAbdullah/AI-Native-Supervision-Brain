@@ -1,7 +1,9 @@
-from fastapi import FastAPI
+from sqlalchemy import text
+from fastapi import Depends, FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
-from app.database import engine, SessionLocal, Base
+from sqlalchemy.orm import Session
+from app.database import engine, SessionLocal, Base, get_db
 from app.models import models  # noqa — ensures all models register
 from app.config import settings
 from app.api.routes import auth, advisors, analysis, reports, rules, dashboard, ingestion, chat
@@ -62,5 +64,7 @@ app.include_router(chat.router, prefix="/api/chat", tags=["Chat"])
 
 
 @app.get("/health")
-def health():
+@app.head("/health")
+def health(db: Session = Depends(get_db)):
+    db.execute(text("SELECT 1"))
     return {"status": "ok", "service": "AI Supervision Brain POC", "version": "1.0.0-poc"}
