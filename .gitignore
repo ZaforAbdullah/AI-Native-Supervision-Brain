@@ -1,0 +1,12 @@
+**/node_modules
+.next
+__pycache__
+.env
+*.pdf
+*.xlsx
+*.tsbuildinfo
+.vscode
+*.pyc
+*.pdf
+.env.local
+next-env.d.ts

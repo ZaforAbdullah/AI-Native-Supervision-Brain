@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f6f4ef;
+  --foreground: #1a2233;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.sidebar-link {
+  @apply flex items-center gap-2.5 px-2.5 py-2.5 rounded-lg text-[#5c584c] hover:bg-[#f1efe7] transition-colors text-sm font-medium;
+}
+
+.sidebar-link.active {
+  @apply bg-[#e7edf3] text-ink-navy;
+}
+
+.card {
+  @apply bg-paper-card rounded-card border border-line;
+}
+
+.badge {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold border;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #d8d2c4; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #c3bcaa; }
